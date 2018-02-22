@@ -18,9 +18,17 @@
         <mockito.version>1.10.19</mockito.version>
         <h2.version>1.4.187</h2.version>
         <dbunit.version>2.2</dbunit.version>
+        <lombok.version>1.16.2</lombok.version>
     </properties>
 
     <dependencies>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+        </dependency>
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
