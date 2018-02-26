@@ -33,9 +33,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         Employee entity = findById(employee.getId());
         if (entity != null) {
             entity.setName(employee.getName());
-            entity.setJoiningDate(employee.getJoiningDate());
+           // entity.setJoiningDate(employee.getJoiningDate());
             entity.setSalary(employee.getSalary());
             entity.setSsn(employee.getSsn());
+        } else {
+            saveEmployee(employee);
         }
     }
 

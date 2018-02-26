@@ -27,6 +27,7 @@ public class AppController {
     private static final String SUCCESS = "success";
     private static final String EMPLOYEE = "employee";
     private static final String EMPLOYEES = "employees";
+    private static final String ALL_EMPLOYEES = "allemployees";
     private static final String EDIT = "edit";
     private static final String SSN = "ssn";
     private static final String REDIRECT = "redirect:";
@@ -42,7 +43,7 @@ public class AppController {
     public String listEmployees(ModelMap model) {
         List<Employee> employeeList = employeeService.findAllEmployees();
         model.addAttribute(EMPLOYEES, employeeList);
-        return "allemployees";
+        return ALL_EMPLOYEES;
     }
 
     @RequestMapping(value = {"/new"}, method = RequestMethod.GET)

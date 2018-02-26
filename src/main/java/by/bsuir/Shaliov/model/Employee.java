@@ -26,10 +26,10 @@ public class Employee {
     @Column(name = "NAME", nullable = false)
     private String name;
 
-    @NotNull
+/*    @NotNull
     @DateTimeFormat(pattern = "dd/MM/yyyy")
-    @Column(name = "JOING_DATE", nullable = false)
-    private LocaleData joiningDate;
+    @Column(name = "JOINING_DATE", nullable = false)
+    private LocaleData joiningDate;*/
 
     @NotNull
     @Digits(integer=8, fraction=2)
@@ -56,13 +56,15 @@ public class Employee {
         this.name = name;
     }
 
-    public LocaleData getJoiningDate() {
+/*    public LocaleData getJoiningDate() {
         return joiningDate;
-    }
+    }*/
 
+/*
     public void setJoiningDate(LocaleData joiningDate) {
         this.joiningDate = joiningDate;
     }
+*/
 
     public BigDecimal getSalary() {
         return salary;
@@ -86,21 +88,21 @@ public class Employee {
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
         return id == employee.id &&
-                Objects.equals(joiningDate, employee.joiningDate) &&
+                /*Objects.equals(joiningDate, employee.joiningDate) &&*/
                 Objects.equals(salary, employee.salary) &&
                 Objects.equals(ssn, employee.ssn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, joiningDate, salary, ssn);
+        return Objects.hash(id, /*joiningDate,*/ salary, ssn);
     }
 
     @Override
     public String toString() {
         return "Employee{" +
                 "id=" + id +
-                ", joiningDate=" + joiningDate +
+                ", joiningDate=" + /*joiningDate +*/
                 ", salary=" + salary +
                 ", ssn='" + ssn + '\'' +
                 '}';
